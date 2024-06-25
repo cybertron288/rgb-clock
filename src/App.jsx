@@ -37,12 +37,12 @@ const App = () => {
         animate={{ backgroundColor }}
         transition={{ duration: 1 }}
       >
-        {/* <div className="flex space-x-4 relative z-10">
+        <div className="flex space-x-4 relative z-10">
           <Triangle rotation={hourRotation} color="red" />
           <Triangle rotation={minuteRotation} color="green" />
           <Triangle rotation={secondRotation} color="blue" />
-        </div> */}
-        <div className="h-full absolute flex flex-col justify-center z-[2] opacity-40">
+        </div>
+        <div className="h-full absolute flex flex-col justify-center z-[2] opacity-40 select-none">
           <div className="kanit-bold text-[240px]">
             {hours}:{minutes}:{seconds}
           </div>
