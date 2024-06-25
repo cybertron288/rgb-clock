@@ -5,17 +5,17 @@ import ColorService from "./service/ColorService"
 
 const App = () => {
   const [time, setTime] = useState({
-    hours: new Date().getHours(),
-    minutes: new Date().getMinutes(),
-    seconds: new Date().getSeconds(),
+    hours: new Date().getHours().toString().padStart(2, "0"),
+    minutes: new Date().getMinutes().toString().padStart(2, "0"),
+    seconds: new Date().getSeconds().toString().padStart(2, "0"),
   })
 
   useEffect(() => {
     const interval = setInterval(() => {
       setTime({
-        hours: new Date().getHours(),
-        minutes: new Date().getMinutes(),
-        seconds: new Date().getSeconds(),
+        hours: new Date().getHours().toString().padStart(2, "0"),
+        minutes: new Date().getMinutes().toString().padStart(2, "0"),
+        seconds: new Date().getSeconds().toString().padStart(2, "0"),
       })
     }, 1000)
     return () => clearInterval(interval)
@@ -40,7 +40,10 @@ const App = () => {
       animate={{ backgroundColor }}
       transition={{ duration: 1 }}
     >
-      <div className="h-full absolute flex flex-col justify-center z-[2] opacity-40">
+      <div
+        className="h-full absolute flex flex-col justify-center z-[2] opacity-40"
+        style={{ color: textColor }}
+      >
         <div className="kanit-bold text-[240px]">
           {time.hours}:{time.minutes}:{time.seconds}
         </div>
