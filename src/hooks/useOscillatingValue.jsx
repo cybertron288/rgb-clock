@@ -1,17 +1,21 @@
 import { useState, useEffect } from "react"
 
+/**
+ * Generates an oscillating value based on the current value and maximum value.
+ *
+ * @param {number} currentValue - The current value.
+ * @param {number} maxValue - The maximum value for the oscillation.
+ * @return {number} The oscillating value between 0 and 255.
+ */
 function useOscillatingValue(currentValue, maxValue) {
   const [mappedValue, setMappedValue] = useState(0)
   const [direction, setDirection] = useState(1) // 1 for forward, -1 for backward
 
   useEffect(() => {
-    // Calculate the ratio of the current value to the max value
     const ratio = currentValue / maxValue
 
-    // Calculate the mapped value between 0 and 255
     const newMappedValue = Math.round(ratio * 255)
 
-    // Update the mapped value based on the direction
     if (direction === 1) {
       setMappedValue(newMappedValue)
       if (currentValue === maxValue) {
