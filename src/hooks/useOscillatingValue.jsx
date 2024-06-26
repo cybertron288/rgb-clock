@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 /**
- * Generates an oscillating value based on the current value and maximum value.
+ * Generates an oscillating value based on the current value and maximum value, mapped within the range of 0 to 255.
  *
  * @param {number} currentValue - The current value.
  * @param {number} maxValue - The maximum value for the oscillation.
